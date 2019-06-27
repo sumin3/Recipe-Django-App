@@ -115,6 +115,7 @@ Want to learn more? Click [Django documentation](https://docs.djangoproject.com/
 
 ## Demo
 [Video Recording Demo](https://drive.google.com/file/d/1Cn5oVolA8PxOnUtsQ83t5kUif_KrLLdO/view?usp=sharing)
-[Images]()
+[Images](https://github.com/sumin3/Recipe-Django-App/tree/master/DemoImages)
+
 ## Author
 (Sumin Yu)[https://github.com/sumin3]  
