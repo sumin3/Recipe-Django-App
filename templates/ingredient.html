@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- HEAD -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ingredients</title>
+  {% load static %}
+  <!-- jquery -->
+  <SCRIPT src="https://code.jquery.com/jquery-3.2.1.min.js"></SCRIPT>
+
+  <!-- function -->
+  <script type="text/javascript" src="{% static 'scripts/ingredient.js' %}"></script>
+
+  <!-- bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- style  -->
+  <link rel="stylesheet" href="{% static 'styles/ingredient.css' %}">
+</head>
+
+<!-- **********************
+       BODY
+       ********************** -->
+
+<body>
+  <!-- **********************
+	 HEADER
+	 ********************** -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(243, 192, 158)">
+    <a class="navbar-brand" href="/">RecipeApp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="/">Ingredients <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="/search/1">Recipes</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- **********************
+	     Banner 
+       ********************** -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3" style="color: rgb(248, 240, 240);">RecipeApp</h1>
+      <p class="card-text" style="font-size: 25px; color: rgb(248, 240, 240);">Help You Cook With What You Have in Your Fridge</p>
+      <p><a class="btn btn-primary btn-lg" href="/search/1" role="button">Get Started &raquo;</a></p>
+    </div>
+  </div>
+
+  <!-- **********************
+	     Ingredient cards 
+       ********************** -->
+  <section class="ingredient-section">
+    <h1 class="card-title">Ingredients </h1>
+    <h6 class="card-subtitle mb-2 text-muted">Click the ingredient below to find matching recipes</h6>
+    <br />
+    <div class="card-deck">
+      {% for ingredient in all_ingredients %}
+      <button class="searchbutton" id={{ingredient.id}}>
+        <div class="card" style="max-width: 250px;">
+          <img style="width: 250px; height: 250px;" src={{ingredient.img_url}} alt="ingredient" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{ingredient.name}}</h5>
+            <p class="card-text text-muted">{{ingredient.property}}</p>
+          </div>
+        </div>
+      </button>
+      {% endfor %}
+    </div>
+  </section>
+</body>
+
+</html>

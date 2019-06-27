@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- HEAD -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Search Recipes</title>
+  {% load static %}
+  <!-- jquery -->
+  <SCRIPT src="https://code.jquery.com/jquery-3.2.1.min.js"></SCRIPT>
+
+  <!-- bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- jquery ui-->
+  <link rel="stylesheet" href="{% static 'jquery-ui-1.12.0-rc.2/jquery-ui.min.css' %}">
+  <script type="text/javascript" src="{% static 'jquery-ui-1.12.0-rc.2/external/jquery/jquery.js' %}"></script>
+  <script type="text/javascript" src="{% static 'jquery-ui-1.12.0-rc.2/jquery-ui.min.js' %}"></script>
+
+  <!-- function -->
+  <script type="text/javascript" src="{% static 'scripts/tokenfield.js' %}"></script>
+
+  <!-- tokenfield -->
+  <script type="text/javascript"
+    src="{% static 'sliptree-bootstrap-tokenfield/dist/bootstrap-tokenfield.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'sliptree-bootstrap-tokenfield/dist/css/bootstrap-tokenfield.css' %}">
+
+  <!-- style  -->
+  <link rel="stylesheet" href="{% static 'styles/recipe.css' %}">
+</head>
+
+
+<!-- **********************
+       BODY
+       ********************** -->
+
+<body>
+
+  <!-- **********************
+	 HEADER
+	 ********************** -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(243, 192, 158)">
+    <a class="navbar-brand" href="/">RecipeApp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="/">Ingredients <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="/search/1">Recipes</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- **********************
+	     Search input box 
+       ********************** -->
+  <section class="search-section">
+    <h1 class="card-title">Search Recipes </h1>
+    <input type="text" class="form-control" id="tokenfield" value="{{ingredientObject.name}}"
+      placeholder="Type ingredient name and hit enter" />
+  </section>
+
+  <!-- **********************
+	     Recipe cards
+       ********************** -->
+  <div id="recipe" class="row mb-2" style="margin-left: 23px; margin-right: 23px">
+    {% if list_recipes|length %}
+    {% for recipe in list_recipes %}
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col-auto">
+          <img class="card-img-top" src={{recipe.img_url}} alt="recipe">
+        </div>
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{{recipe.name}}</strong>
+          <h3 class="mb-0">Ingredients</h3>
+          <ul class="Ingredients">
+            {% for ingredient in recipe.ingredients %}
+            <li class="mb-1 text-muted">{{ingredient}}</li>
+            {% endfor %}
+          </ul>
+          <h3 class="mb-0">Directions</h3>
+          <ul class="list-group list-group-flush Directions">
+            {% for direction in recipe.directions %}
+            <li class="list-group-item">{{direction}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h5 style="padding-left: 23px;" class="card-text">No results were found. Try another search </h5>
+    {% endif %}
+  </div>
+</body>
+
+</html>
