@@ -54,7 +54,7 @@ Django version 2.1, using settings 'django_project.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 ```
-Copy the `url` above to your browser to see the Demo.
+Copy the `url` http://127.0.0.1:8000/ above to your browser to see the Demo.
 
 #### API
 Make sure your `url` for `POST` method in file [tokenfield.js](https://github.com/sumin3/Recipe-Django-App/blob/master/static/scripts/tokenfield.js) line `32` and your browser `url` are the same. (In this case, the url should be http://127.0.0.1:8000/)
