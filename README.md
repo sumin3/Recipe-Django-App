@@ -89,7 +89,7 @@ recipeItem.objects.all()[index number]
 
 >>> recipeItem.objects.all()[0] //get the first object
 ```
-To get the value of the object. (`name` is one filed of the recipeItem model. You can change it to different fileds) Want to know what fileds you can use?  look at the model file [models.py](https://github.com/sumin3/Recipe-Django-App/blob/master/ingredient/models.py) 
+- To get the value of the object. (`name` is one filed of the recipeItem model. You can change it to different fileds) Want to know what fileds you can use?  look at the model file [models.py](https://github.com/sumin3/Recipe-Django-App/blob/master/ingredient/models.py) 
 ```
 >>> recipeItem.objects.all()[0].name
 ```
