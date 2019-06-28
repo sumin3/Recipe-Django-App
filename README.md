@@ -9,7 +9,7 @@ Recipe App is a django web app that allow user to search recipes by ingredients.
 * [Getting started](https://github.com/sumin3/Recipe-Django-App#Getting-started)
 * [Database](https://github.com/sumin3/Recipe-Django-App#Database)
 * [Demo](https://github.com/sumin3/Recipe-Django-App#Demo)
-* [Authors](https://github.com/sumin3/Recipe-Django-App#Authors)
+* [Authors](https://github.com/sumin3/Recipe-Django-App#Author)
 
 ## Built With
 - Web framework [Djando](https://www.djangoproject.com/) (version 2.1) for this project
@@ -118,4 +118,4 @@ Want to learn more? Click [Django documentation](https://docs.djangoproject.com/
 - [Images](https://github.com/sumin3/Recipe-Django-App/tree/master/DemoImages)
 
 ## Author
-(Sumin Yu)[https://github.com/sumin3]  
+[Sumin Yu](https://github.com/sumin3)
