@@ -56,6 +56,9 @@ Quit the server with CONTROL-C.
 ```
 Copy the `url` above to your browser to see the Demo.
 
+#### API
+Make sure your `url` for `POST` method in file [tokenfield.js](https://github.com/sumin3/Recipe-Django-App/blob/master/static/scripts/tokenfield.js) line `32` and your browser `url` are the same. (In this case, the url should be http://127.0.0.1:8000/)
+
 ## Database
 - recipeItem and ingredientItem models both defined in file [models.py](https://github.com/sumin3/Recipe-Django-App/blob/master/ingredient/models.py)
 
