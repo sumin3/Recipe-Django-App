@@ -24,10 +24,11 @@ git clone https://github.com/sumin3/Recipe-Django-App.git
 ```
 cd Recipe-Django-App
 ```
+Install python3 with [brew](https://brew.sh/) for Mac
 ```
 brew install python3
 ```
-Install pipenv to create virtual environment for python. (`brew` should install `pip3` for you when you install python3. 
+Install pipenv to create virtual environment for python. (`brew` should install `pip3` for you when you install python3.)
 ```
 pip3 install pipenv
 ```
