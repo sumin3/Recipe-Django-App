@@ -9,7 +9,7 @@ Recipe App is a django web app that allow user to search recipes by ingredients.
 * [Getting started](https://github.com/sumin3/Recipe-Django-App#Getting-started)
 * [Database](https://github.com/sumin3/Recipe-Django-App#Database)
 * [Demo](https://github.com/sumin3/Recipe-Django-App#Demo)
-* [Authors](https://github.com/sumin3/Recipe-Django-App#Author)
+* [Author](https://github.com/sumin3/Recipe-Django-App#Author)
 
 ## Built With
 - Web framework [Djando](https://www.djangoproject.com/) (version 2.1) for this project
@@ -72,14 +72,14 @@ Import the models
 >>> from ingredient.models import recipeItem
 >>> from ingredient.models import ingredientItem
 ```
-To get all the object in the model
+- To get all the object in the model
 ```
 >>> recipeItem.objects.all()
 ```
 ```
 >>> ingredientItem.objects.all()
 ```
-To get one object of the model
+- To get one object of the model
 ```
 recipeItem.objects.all()[index number]
 
@@ -89,7 +89,7 @@ To get the value of the object. (`name` is one filed of the recipeItem model. Yo
 ```
 >>> recipeItem.objects.all()[0].name
 ```
-- Add new ingredient
+- To add new ingredient
 ```
 >>> i1 = ingredientItem(name="potato", property="vegetable", img_url="image-url-link")
 ```
@@ -97,7 +97,7 @@ Save it!
 ```
 >>> i1.save()
 ```
-- Add new recipe (use `#` to separate the ingredients and steps) Since 
+- To add new recipe (use `#` to separate the ingredients and steps)
 ```
 >>> r1 = recipeItem(name="recipe-name", ingredients="ingredient1#ingredient2#ingredient3", directions="step1#step2#step3", img_url="image-url-link")
 >>> r1.save()
@@ -106,7 +106,7 @@ Associate the recipe `r1` with a ingredient `i1`:
 ```
 >>> r1.list_ingredient.add(i1)
 ```
-- Update a value
+- To update a value
 ```
 >>> i1.name = "beef"
 >>> i1.save(update_fields = ['name'])
