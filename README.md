@@ -118,7 +118,7 @@ Associate the recipe `r1` with a ingredient `i1`:
 Want to learn more? Click [Django documentation](https://docs.djangoproject.com/en/2.2/)
 
 ## Demo
-- [Video Recording Demo](https://drive.google.com/file/d/1Cn5oVolA8PxOnUtsQ83t5kUif_KrLLdO/view?usp=sharing)
+- [Video Recording Demo](https://drive.google.com/file/d/17bRMjitA5LP1EotJRLqfqB2L1UgxS8sJ/view?usp=sharing)
 - [Images](https://github.com/sumin3/Recipe-Django-App/tree/master/DemoImages)
 
 ## Author
